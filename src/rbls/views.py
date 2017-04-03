@@ -14,11 +14,23 @@ class RBLView(generic.TemplateView):
         rbls = Rbllist.objects.all()
         addrform = AddrForm()
 
-        if request.method == 'POST':
-            addrform = AddrForm(request.POST)
+        data = { 'rbls': rbls, 'form': addrform }
+
+        return render(request, self.template_name, data)
+
+class RBLCheck(generic.TemplateView):
+    template_name = 'rbl_check.html'
+
+    def get(self, request):
+        #print(request.GET)
+        if request.method == 'GET':
+            addrform = AddrForm(request.GET)
         if addrform.is_valid():
-            return redirect('rbl_check')
+            address = addrform.cleaned_data['address']
+            data = { 'address': address }
+            return render(request, self.template_name, data)
         else:
             addrform = AddrForm()
+            return HttpResponseRedirect('/list/')
 
-        return render(request, self.template_name, {'rbls': rbls, 'form': addrform})
+        return HttpResponseRedirect('/list/')

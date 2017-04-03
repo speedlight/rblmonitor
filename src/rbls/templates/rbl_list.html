@@ -17,7 +17,7 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <h2>Address check</h2>
-        <form action="/rbls/check" method="post">
+        <form action="{% url 'rbls:check' %}" method="GET">
           {% csrf_token %}
           {{ form }}
           <input type="submit" value="OK">

@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     url(r'^list$', views.RBLView.as_view(), name='list'),
-    url(r'^check$', views.RBLView.as_view(), name='check'),
+    url(r'^check$', views.RBLCheck.as_view(), name='check'),
 ]
