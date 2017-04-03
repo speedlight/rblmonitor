@@ -55,5 +55,8 @@ tramp
 Thumbs.db
 Desktop.ini
 
+# PyCharm
+.idea
+
 # Project settings
 ./site/
