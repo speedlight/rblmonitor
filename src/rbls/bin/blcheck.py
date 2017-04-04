@@ -1,4 +1,11 @@
 from django.conf import settings
+from rbls.models import Rbllist
 
-def _ipstatus(args):
-    return "ip status"
+rbls = Rbllist.objects.all()
+
+def _ipstatus(*args):
+
+    ip = args
+    
+    data =
+    return data

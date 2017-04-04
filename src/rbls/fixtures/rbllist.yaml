@@ -1,0 +1,63 @@
+- model: rbls.rbllist
+  pk: 1
+  fields: {name: 'Spamhaus SBL, XBL and PBL', url: 'http://zen.spamhaus.org', description: ''}
+- model: rbls.rbllist
+  pk: 2
+  fields: {name: SORBS aggregated, url: 'http://dnsbl.sorbs.net', description: ''}
+- model: rbls.rbllist
+  pk: 3
+  fields: {name: SORBS aggregated subset, url: 'http://safe.dnsbl.sorbs.net', description: ''}
+- model: rbls.rbllist
+  pk: 4
+  fields: {name: Heise iX NiX Spam, url: 'http://ix.dnsbl.manitu.net', description: ''}
+- model: rbls.rbllist
+  pk: 5
+  fields: {name: Bad Abuse, url: 'http://babl.rbl.webiron.net', description: ''}
+- model: rbls.rbllist
+  pk: 6
+  fields: {name: Chronicly Bad Abuse, url: 'http://cabl.rbl.webiron.net', description: ''}
+- model: rbls.rbllist
+  pk: 7
+  fields: {name: Exclusively Spam/Malware, url: 'http://truncate.gbudb.net', description: ''}
+- model: rbls.rbllist
+  pk: 8
+  fields: {name: Trapserver Cluster, url: 'http://dnsbl-1.uceprotect.net', description: ''}
+- model: rbls.rbllist
+  pk: 9
+  fields: {name: Net of traps, url: 'http://cbl.abuseat.org', description: ''}
+- model: rbls.rbllist
+  pk: 10
+  fields: {name: Used in IBM products, url: 'http://dnsbl.cobion.com', description: ''}
+- model: rbls.rbllist
+  pk: 11
+  fields: {name: 'Passive list, easy to unlist', url: 'http://psbl.surriel.com', description: ''}
+- model: rbls.rbllist
+  pk: 12
+  fields: {name: Real-time black list, url: 'http://dnsrbl.org', description: ''}
+- model: rbls.rbllist
+  pk: 13
+  fields: {name: Weighted private, url: 'http://db.wpbl.info', description: ''}
+- model: rbls.rbllist
+  pk: 14
+  fields: {name: Based on spamcop users, url: 'http://bl.spamcop.net', description: ''}
+- model: rbls.rbllist
+  pk: 15
+  fields: {name: Dynamic IP addresses, url: 'http://dyna.spamrats.com', description: ''}
+- model: rbls.rbllist
+  pk: 16
+  fields: {name: Manual submissions, url: 'http://spam.spamrats.com', description: ''}
+- model: rbls.rbllist
+  pk: 17
+  fields: {name: Suspicious authentications, url: 'http://auth.spamrats.com', description: ''}
+- model: rbls.rbllist
+  pk: 18
+  fields: {name: Including netblocks, url: 'http://bl.spamcannibal.org', description: ''}
+- model: rbls.rbllist
+  pk: 19
+  fields: {name: Automated and reported, url: 'http://dnsbl.inps.de', description: ''}
+- model: rbls.rbllist
+  pk: 20
+  fields: {name: Fail2ban reports etc, url: 'http://bl.blocklist.de', description: ''}
+- model: rbls.rbllist
+  pk: 21
+  fields: {name: Viruse senders, url: 'http://virbl.dnsbl.bit.nl', description: ''}
