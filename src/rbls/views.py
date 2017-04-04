@@ -6,12 +6,14 @@ from django.shortcuts import get_object_or_404, redirect
 
 from rbls.forms import AddrForm
 from rbls.models import Rbllist
+from rbls.bin.blcheck import _ipstatus
+rbls = Rbllist.objects.all()
+
 
 class RBLView(generic.TemplateView):
     template_name = 'rbl_list.html'
 
     def get(self, request):
-        rbls = Rbllist.objects.all()
         addrform = AddrForm()
 
         data = { 'rbls': rbls, 'form': addrform }
@@ -22,13 +24,17 @@ class RBLCheck(generic.TemplateView):
     template_name = 'rbl_check.html'
 
     def get(self, request):
-        #print(request.GET)
         if request.method == 'GET':
             addrform = AddrForm(request.GET)
         if addrform.is_valid():
             address = addrform.cleaned_data['address']
-            data = { 'address': address }
+
+            # import bin/rblcheck.py and get an array of [rbl,state]
+
+            data = { 'rbls': rbls, 'address': address }
+
             return render(request, self.template_name, data)
+
         else:
             addrform = AddrForm()
             return HttpResponseRedirect('/list/')
