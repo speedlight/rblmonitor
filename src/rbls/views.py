@@ -8,7 +8,7 @@ from rbls.forms import AddrForm
 from rbls.models import Rbllist
 from rbls.bin.blcheck import _ipstatus
 
-rbls = Rbllist.objects.values_list('url', flat=True)
+rbls = Rbllist.objects.values_list('name', flat=True)
 
 
 class RBLView(generic.TemplateView):
