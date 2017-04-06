@@ -9,6 +9,7 @@ from rbls.models import Rbllist
 from rbls.bin.blcheck import _ipstatus
 
 rbls = Rbllist.objects.values_list('name', flat=True)
+bls_url = Rbllist.objects.values_list('url', flat=True)
 
 
 class RBLView(generic.TemplateView):
@@ -34,7 +35,7 @@ class RBLCheck(generic.TemplateView):
             # import bin/blcheck.py and get an array of [rbl,state]
             result = _ipstatus(address)
             data = {
-                'rbls': rbls,
+                'bls': bls_url,
                 'address': address,
                 'result': result,
             }

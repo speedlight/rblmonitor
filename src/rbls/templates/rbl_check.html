@@ -19,11 +19,10 @@
         <h1>{% include "_brandname.html" %}</h1>
         <p class="lead">Blacklist address result for <bold>{{ address }}</bold></p>
         <ul>
-          {% for rbl in rbls %}
-            <li>{{ rbl }}</li>
+          {% for r in result %}
+            <li>{{ r }}</li>
           {% endfor %}
         </ul>
-      <p>{{ result }}</p>
       </div>
     </div>
   </div>

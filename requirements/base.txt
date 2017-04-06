@@ -5,4 +5,4 @@ django-crispy-forms>=1.5.2
 django-admin-bootstrapped>=2.5.6
 django-authtools>=1.4.0
 easy-thumbnails>=2.3
-dnspython>=1.15.0
+dnspython3>=1.15.0

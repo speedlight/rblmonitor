@@ -61,3 +61,6 @@
 - model: rbls.rbllist
   pk: 21
   fields: {name: Viruse senders, url: 'virbl.dnsbl.bit.nl', description: ''}
+- model: rbls.rbllist
+  pk: 22
+  fields: {name: Anonmails DE, url: 'spam.dnsbl.anonmails.de ', description: ''}
