@@ -1,5 +1,4 @@
 from django.contrib import admin
 from .models import Rbllist
 
-# Register your models here.
-admin.site.register(Rbllist)
+admin.site.register(Rbllist, list_display = ['name'])

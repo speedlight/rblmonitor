@@ -3,7 +3,7 @@ from rbls.models import Rbllist
 import dns.resolver
 import dns.reversename
 
-bls = Rbllist.objects.values_list('url', flat=True)
+bls = Rbllist.objects.all()
 
 def _ipstatus(ip):
 
