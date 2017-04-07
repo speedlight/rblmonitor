@@ -4,19 +4,25 @@ import dns.reversename
 
 def _ipstatus(ip, bl):
 
+    data = []
     reverse_ip = dns.reversename.from_address(ip)
     resol = dns.resolver.Resolver(configure=False)
-    resol.nameservers = ['192.168.1.1']
+    resol.timeout = 5
+    resol.nameservers = ['192.168.4.20']
     full_reverse_addr = str(reverse_ip.split(3)[0]) + '.' + bl
 
     try:
         addr_txt = resol.query(full_reverse_addr, 'TXT')
         addr_a = resol.query(full_reverse_addr, 'A')
-        result = "The {} in {} is listed: {} with {}!".format(ip, bl, addr_txt[0], addr_a[0])
-        print(result)
+        state = True
+        response = { 'ip': ip, 'bl': bl, 'txt': addr_txt[0], 'a': addr_a[0], 'state': state }
+        data.append(response)
+        print(response)
     except (dns.resolver.NXDOMAIN, dns.resolver.NoAnswer, dns.resolver.NoNameservers, dns.exception.Timeout):
-        result = "The {} is not listed in {}!".format(ip, bl)
-        print(result)
+        state = False
+        response = { 'ip': ip, 'bl': bl, 'state': state }
+        data.append(response)
+        print(response)
         pass
 
-    return result
+    return response

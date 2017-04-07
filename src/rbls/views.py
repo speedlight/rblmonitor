@@ -27,19 +27,19 @@ class RBLCheck(generic.TemplateView):
 
     def get(self, request):
 
-        result = []
+        check = []
         if request.method == 'GET':
             addrform = AddrForm(request.GET)
         if addrform.is_valid():
             address = addrform.cleaned_data['address']
 
             for bl in bls_url:
-                result.append(_ipstatus(address, bl))
+                check.append(_ipstatus(address, bl))
 
             data = {
                 'bls': bls_url,
                 'address': address,
-                'result': result,
+                'check': check,
             }
 
             return render(request, self.template_name, data)

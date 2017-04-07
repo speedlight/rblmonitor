@@ -19,8 +19,12 @@
         <h1>{% include "_brandname.html" %}</h1>
         <p class="lead">Blacklist address result for <bold>{{ address }}</bold></p>
         <ul>
-          {% for r in result %}
-            <li>{{ r }}</li>
+          {% for c in check %}
+            {% if c.state %}
+                <li>Is LISTED in {{ c.bl }}. Result: {{ c.txt }}, {{ c.a }} </li>
+            {% else %}
+                <li>Is NOT LISTED in {{ c.bl }}</li>
+            {% endif %}
           {% endfor %}
         </ul>
       </div>
