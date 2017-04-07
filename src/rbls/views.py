@@ -27,13 +27,15 @@ class RBLCheck(generic.TemplateView):
 
     def get(self, request):
 
+        result = []
         if request.method == 'GET':
             addrform = AddrForm(request.GET)
         if addrform.is_valid():
             address = addrform.cleaned_data['address']
 
-            # import bin/blcheck.py and get an array of [rbl,state]
-            result = _ipstatus(address)
+            for bl in bls_url:
+                result.append(_ipstatus(address, bl))
+
             data = {
                 'bls': bls_url,
                 'address': address,
