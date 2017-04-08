@@ -8,7 +8,7 @@ def _ipstatus(ip, bl):
     reverse_ip = dns.reversename.from_address(ip)
     resol = dns.resolver.Resolver(configure=False)
     resol.timeout = 5
-    resol.nameservers = ['192.168.4.20']
+    resol.nameservers = ['192.168.1.1']
     full_reverse_addr = str(reverse_ip.split(3)[0]) + '.' + bl
 
     try:
