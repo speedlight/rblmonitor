@@ -4,9 +4,9 @@ from django.views import generic
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect
 
-from rbls.forms import AddrForm
-from rbls.models import Rbllist
-from rbls.bin.blcheck import _ipstatus
+from .forms import AddrForm
+from .models import Rbllist
+from .bin.blcheck import _ipstatus
 
 rbls = Rbllist.objects.values_list('name', flat=True)
 bls_url = Rbllist.objects.values_list('url', flat=True)
@@ -18,7 +18,7 @@ class RBLView(generic.TemplateView):
     def get(self, request):
         addrform = AddrForm()
 
-        data = { 'rbls': rbls, 'form': addrform }
+        data = {'rbls': rbls, 'form': addrform}
 
         return render(request, self.template_name, data)
 
@@ -48,4 +48,4 @@ class RBLCheck(generic.TemplateView):
             addrform = AddrForm()
             return HttpResponseRedirect('/rbls/list')
 
-        return HttpResponseRedirect('/rbls/list')
+        #return HttpResponseRedirect('/rbls/list')
