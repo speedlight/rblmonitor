@@ -4,6 +4,7 @@
 
 rblmonitor is an app to check if an IP is blacklisted.
 It is built with [Python][0] using the [Django Web Framework][1].
+And bootstraped with [Django Edge][2]
 
 This project has the following basic apps:
 
@@ -33,3 +34,4 @@ Import the data from the fixture:
 
 [0]: https://www.python.org/
 [1]: https://www.djangoproject.com/
+[2]: http://django-edge.readthedocs.io/en/latest/
