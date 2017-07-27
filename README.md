@@ -21,16 +21,17 @@ comes with virtualenv built-in. So create a virtual env by:
     2. `$ . rblmonitor/bin/activate`
 
 Install all dependencies:
-
     pip3 install -r requirements.txt
 
-Run migrations:
+Copy local.sample.env to local.env.
+!!Important!! Generate a new SECRECT_KEY
 
+Run migrations:
     python3 manage.py migrate
     
 Import the data from the fixture:
-    
     python3 manage.py loaddata rbllist
+
 
 [0]: https://www.python.org/
 [1]: https://www.djangoproject.com/
