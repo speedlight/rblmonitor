@@ -32,6 +32,11 @@ Run migrations:
 Import the data from the fixture:
     python3 manage.py loaddata rbllist
 
+Create super user:
+    python3 manage.py createsuperuser
+
+Run the application:
+    python3 manage.py runserver
 
 [0]: https://www.python.org/
 [1]: https://www.djangoproject.com/
