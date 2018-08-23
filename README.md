@@ -25,10 +25,12 @@ Install all dependencies:
 
 Copy local.sample.env to local.env.
 !!Important!! Generate a new SECRECT_KEY
+
     cp src/rblmonitor/settings/local.sample.env src/rblmonitor/settings/local.env
 
 Run migrations:
-    python3 src/manage.py migrate
+
+python3 src/manage.py migrate
     
 Import the data from the fixture:
     python3 src/manage.py loaddata rbllist
