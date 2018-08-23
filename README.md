@@ -30,7 +30,11 @@ Copy local.sample.env to local.env.
 
 Run migrations:
 
+<<<<<<< HEAD
 `python3 src/manage.py migrate`
+=======
+python3 src/manage.py migrate
+>>>>>>> 9205730edadc3076b087eaf9f5775982e23c327b
     
 Import the data from the fixture:
 
