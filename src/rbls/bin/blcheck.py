@@ -11,14 +11,16 @@ resol.nameservers = ['192.168.4.20']
 def _get_addr(query):
     if ipaddress.ip_address(query):
         return query
+    elif not ipaddress.ip_address(query):
+        print("Not a valid ipv4 or ipv6 address")
+        raise ValueError("Not a valid ipv4 or ipv6 address")
     else:
-        raise ValueError()
-    try:
-       addr = resol.query(query, 'a')
-    except (dns.resolver.NXDOMAIN, dns.resolver.NoAnswer):
-       pass
-    if not addr:
-        raise ValueError("There isn't any a records for the domain")
+        try:
+            addr = resol.query(query, 'a')
+        except (dns.resolver.NXDOMAIN, dns.resolver.NoAnswer):
+            pass
+        if not addr:
+            raise ValueError("There isn't any a records for the domain")
     return addr[0]
 
 
@@ -33,12 +35,10 @@ def _ipstatus(address, bl):
         state = True
         message = {'address': address, 'bl': bl, 'txt': response_txt[0], 'a': response_a[0], 'state': state}
         data.append(message)
-        print(message)
     except (dns.resolver.NXDOMAIN, dns.resolver.NoAnswer, dns.resolver.NoNameservers, dns.exception.Timeout):
         state = False
         message = {'address': address, 'bl': bl, 'state': state}
         data.append(message)
-        print(message)
         pass
 
     return message

@@ -25,11 +25,11 @@ Install all dependencies:
 
 Run migrations:
 
-    python3 manage.py migrate
+    python3 src/manage.py migrate
     
 Import the data from the fixture:
     
-    python3 manage.py loaddata rbllist
+    python3 src/manage.py loaddata rbllist
 
 [0]: https://www.python.org/
 [1]: https://www.djangoproject.com/
