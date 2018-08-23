@@ -25,18 +25,19 @@ Install all dependencies:
 
 Copy local.sample.env to local.env.
 !!Important!! Generate a new SECRECT_KEY
+    cp src/rblmonitor/settings/local.sample.env src/rblmonitor/settings/local.env
 
 Run migrations:
-    python3 manage.py migrate
+    python3 src/manage.py migrate
     
 Import the data from the fixture:
-    python3 manage.py loaddata rbllist
+    python3 src/manage.py loaddata rbllist
 
 Create super user:
-    python3 manage.py createsuperuser
+    python3 src/manage.py createsuperuser
 
 Run the application:
-    python3 manage.py runserver
+    python3 src/manage.py runserver
 
 [0]: https://www.python.org/
 [1]: https://www.djangoproject.com/
