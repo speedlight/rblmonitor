@@ -31,7 +31,7 @@ Copy local.sample.env to local.env.
 Run migrations:
 
 `python3 src/manage.py migrate`
-    
+
 Import the data from the fixture:
 
 `python3 src/manage.py loaddata rbllist`
