@@ -17,16 +17,13 @@ class RBLView(generic.TemplateView):
 
     def get(self, request):
         addrform = AddrForm()
-
         data = { 'rbls': rbls, 'form': addrform }
-
         return render(request, self.template_name, data)
 
 class RBLCheck(generic.TemplateView):
     template_name = 'rbl_check.html'
 
     def get(self, request):
-
         check = []
         if request.method == 'GET':
             addrform = AddrForm(request.GET)

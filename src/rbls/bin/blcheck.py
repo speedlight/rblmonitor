@@ -15,7 +15,13 @@ def _ipstatus(ip, bl):
         addr_txt = resol.query(full_reverse_addr, 'TXT')
         addr_a = resol.query(full_reverse_addr, 'A')
         state = True
-        response = { 'ip': ip, 'bl': bl, 'txt': addr_txt[0], 'a': addr_a[0], 'state': state }
+        response = { 'ip': ip,
+                'bl': bl,
+                'txt': addr_txt[0],
+                'a': addr_a[0],
+                'state': state
+                }
+
         data.append(response)
         print(response)
     except (dns.resolver.NXDOMAIN, dns.resolver.NoAnswer, dns.resolver.NoNameservers, dns.exception.Timeout):
