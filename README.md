@@ -1,6 +1,8 @@
 
 
 # rblmonitor
+[![Build Status](https://travis-ci.org/speedlight/rblmonitor.svg?branch=master)](https://travis-ci.org/speedlight/rblmonitor)
+
 
 rblmonitor is an app to check if an IP is blacklisted.
 It is built with [Python][0] using the [Django Web Framework][1].
